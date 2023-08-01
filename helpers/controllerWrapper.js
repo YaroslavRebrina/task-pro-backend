@@ -1,7 +1,7 @@
 const errorHandler = require("./errorHandler");
 
 const controllerWrapper = (controller) => {
-  return async (req, res, next) => {
+  const func = async (req, res, next) => {
     try {
       controller(req, res, next);
     } catch (err) {
@@ -11,6 +11,8 @@ const controllerWrapper = (controller) => {
       next(err);
     }
   };
+
+  return func;
 };
 
 module.exports = controllerWrapper;

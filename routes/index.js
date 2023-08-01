@@ -1,4 +1,4 @@
 const usersRouter = require("./users/usersRouter");
-const columsRouter = require("./colums/columsRouter");
+const boardRouter = require("./colums/boardRouter");
 
-module.exports = { usersRouter, columsRouter };
+module.exports = { usersRouter, boardRouter };
