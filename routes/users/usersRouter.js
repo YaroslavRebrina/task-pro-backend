@@ -1,9 +1,17 @@
 const express = require("express");
+const { controllerWrapper } = require("../../helpers");
+const { registration } = require("../../controllers");
+const { userJoiSchema } = require("../../middlwares");
+const Joi = require("joi");
 const router = express.Router();
 
-router.post("/registration");
+router.post(
+  "/registration",
+  Joi.valid(userJoiSchema),
+  controllerWrapper(registration)
+);
 router.post("/login");
 router.post("/logout");
-router.patch('/change')
+router.patch("/avatar");
 
 module.exports = router;
