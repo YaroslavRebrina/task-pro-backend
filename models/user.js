@@ -12,7 +12,7 @@ const userSchema = new Schema({
   },
   avatarURL: { type: String, required: [true, "Upload avatar"] },
   token: { type: String },
-  theme: { enum: ["DARK", "LIGHT", "VIOLET"], default: "LIGHT" },
+  theme: { type: String, enum: ["DARK", "LIGHT", "VIOLET"], default: "LIGHT" },
 });
 
 const User = model("user", userSchema);
