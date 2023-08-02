@@ -2,9 +2,9 @@ const express = require("express");
 const { connect } = require("mongoose");
 const cors = require("cors");
 const { usersRouter, boardRouter } = require("./routes");
-// const boardsRouter = require('./routes/api/boards');
-// const columnsRouter = require('./routes/api/columns');
-// const cardsRouter = require('./routes/api/cards');
+// const boardsRouter = require("./routes/api/boards");
+// const columnsRouter = require("./routes/api/columns");
+// const cardsRouter = require("./routes/api/cards");
 
 const { DB_LINK } = process.env;
 
@@ -22,9 +22,9 @@ app.use(express.json());
 
 app.use("api/users", usersRouter);
 app.use("api/colums", boardRouter);
-// app.use('/api/boards', boardsRouter);
-// app.use('/api/columns', columnsRouter);
-// app.use('/api/cards', cardsRouter);
+// app.use("/api/boards", boardsRouter);
+// app.use("/api/columns", columnsRouter);
+// app.use("/api/cards", cardsRouter);
 
 app.use((req, res) => {
   res.status(400).json({ message: "Not Found" });
