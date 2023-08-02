@@ -1,4 +1,4 @@
-const { errorHandler } = require("../../heplers");
+const { errorHandler } = require("../../helpers");
 const { User } = require("../../models");
 const brypt = require("bcrypt");
 const JWT = require("jsonwebtoken");

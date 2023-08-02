@@ -3,13 +3,13 @@ const bcrypt = require("bcrypt");
 const gravatar = require("gravatar");
 const { errorHandler } = require("../../helpers");
 
-const registration = (req, res, next) => {
+const registration = async (req, res, next) => {
   const { email, password } = req.body;
 
   const avatarURL = gravatar.profile_url(email);
   const hashedPassword = bcrypt.hashSync(password, 10);
   try {
-    const result = User.create({
+    const result = await User.create({
       password: hashedPassword,
       email,
       avatarURL: avatarURL,
