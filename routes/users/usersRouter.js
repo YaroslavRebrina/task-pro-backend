@@ -1,13 +1,13 @@
 const express = require("express");
 const { controllerWrapper } = require("../../helpers");
 const { registration } = require("../../controllers");
-const { userJoiSchema } = require("../../middlwares");
+const { userJoiSchema, validateScheme } = require("../../middlwares");
 const Joi = require("joi");
 const router = express.Router();
 
 router.post(
   "/registration",
-  Joi.valid(userJoiSchema),
+  validateScheme(userJoiSchema),
   controllerWrapper(registration)
 );
 router.post("/login");

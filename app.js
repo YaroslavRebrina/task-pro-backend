@@ -1,13 +1,16 @@
 const express = require("express");
-const { connect } = require("mongoose");
 const cors = require("cors");
+const { connect } = require("mongoose");
 const { usersRouter, boardRouter } = require("./routes");
 
-const { DB_LINK } = process.env;
+require("dotenv").config();
 
 const app = express();
+const { DB_USER, DB_PASSWORD } = process.env;
 
-connect(DB_LINK)
+connect(
+  `mongodb+srv://${DB_USER}:${DB_PASSWORD}@taskpro.dnaisfp.mongodb.net/TaskPro?retryWrites=true&w=majority`
+)
   .then(() => console.log("Succesful connection with database"))
   .catch((e) => {
     console.log(e.message);
