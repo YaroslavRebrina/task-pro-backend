@@ -26,7 +26,7 @@ const login = async (req, res) => {
   const payload = {
     id: userExist._id,
   };
-  console.log(payload, SECRET_KEY);
+
   const JWT_TOKEN = JWT.sign(payload, SECRET_KEY, {
     expiresIn: "1h",
   });

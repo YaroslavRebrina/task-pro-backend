@@ -1,7 +1,7 @@
 const Joi = require("joi");
 
 const userJoiSchema = Joi.object({
-  username: Joi.string().required(),
+  username: Joi.string(),
   password: Joi.string().required(),
   email: Joi.string().required(),
   subscription: Joi.string()
