@@ -39,7 +39,6 @@ const login = async (req, res) => {
 
   res.status(200).json({
     token: JWT_TOKEN,
-
     email: userExist.email,
   });
 };
