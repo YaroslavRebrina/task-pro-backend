@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const { connect } = require("mongoose");
-const { usersRouter, boardRouter } = require("./routes");
+const { usersRouter, boardRouter, emailRouter } = require("./routes");
 // const boardsRouter = require("./routes/api/boards");
 // const columnsRouter = require("./routes/api/columns");
 // const cardsRouter = require("./routes/api/cards");
@@ -25,6 +25,7 @@ app.use(express.json());
 
 app.use("/api/users", usersRouter);
 app.use("/api/colums", boardRouter);
+app.use("/api/email", emailRouter);
 // app.use("/api/boards", boardsRouter);
 // app.use("/api/columns", columnsRouter);
 // app.use("/api/cards", cardsRouter);
