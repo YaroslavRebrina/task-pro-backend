@@ -1,6 +1,6 @@
 const registration = require("./users/registration");
 const login = require("./users/login");
 // const logout = require("./users/logout");
-const changeUserSettings = require("./users/changeUserSettings");
+const update = require("./users/update");
 
-module.exports = { registration, login, changeUserSettings };
+module.exports = { registration, login, update };
