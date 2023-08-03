@@ -4,5 +4,10 @@ const boardsRouter = require("./boards/boardsRouter");
 const columnRouter = require("./boards/columnRouter");
 const cardRouter = require("./boards/cardRouter");
 
-
-module.exports = { usersRouter, boardRouter, boardsRouter, columnRouter, cardRouter};
+module.exports = {
+  usersRouter,
+  boardRouter,
+  boardsRouter,
+  columnRouter,
+  cardRouter,
+};
