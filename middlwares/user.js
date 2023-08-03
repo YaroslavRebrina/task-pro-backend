@@ -2,7 +2,7 @@ const Joi = require("joi");
 
 const userJoiSchema = Joi.object({
   username: Joi.string().required(),
-  password: Joi.string().required().min(8),
+  password: Joi.string().required(),
   email: Joi.string().required(),
   subscription: Joi.string()
     .valid("starter", "pro", "business")

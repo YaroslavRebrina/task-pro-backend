@@ -12,7 +12,7 @@ const app = express();
 const { DB_USER, DB_PASSWORD } = process.env;
 
 connect(
-  `mongodb+srv://${DB_USER}:${DB_PASSWORD}@taskpro.dnaisfp.mongodb.net/TaskPro?retryWrites=true&w=majority`
+  `mongodb+srv://${DB_USER}:${DB_PASSWORD}@taskpro.dnaisfp.mongodb.net/TASKPRO?retryWrites=true&w=majority`
 )
   .then(() => console.log("Succesful connection with database"))
   .catch((e) => {
