@@ -23,13 +23,11 @@ connect(
 app.use(cors());
 app.use(express.json());
 
-
-app.use("api/users", usersRouter);
-app.use("api/colums", boardRouter);
+app.use("/api/users", usersRouter);
+app.use("/api/colums", boardRouter);
 // app.use("/api/boards", boardsRouter);
 // app.use("/api/columns", columnsRouter);
 // app.use("/api/cards", cardsRouter);
-
 
 app.use((req, res) => {
   res.status(400).json({ message: "Not Found" });
