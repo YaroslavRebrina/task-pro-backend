@@ -14,7 +14,7 @@ router.post(
   validateScheme(userJoiSchema),
   controllerWrapper(registration)
 );
-router.post("/login", validateScheme(userJoiSchema), controllerWrapper(login));
+router.patch("/login", validateScheme(userJoiSchema), controllerWrapper(login));
 router.post("/logout");
 router.patch("/changeUserSettings", controllerWrapper(changeUserSettings));
 

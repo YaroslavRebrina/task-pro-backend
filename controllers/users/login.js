@@ -2,10 +2,10 @@ const { errorHandler } = require("../../helpers");
 const { User } = require("../../models");
 const brypt = require("bcrypt");
 const JWT = require("jsonwebtoken");
-const { HASH_SECRET_KEY } = process.env;
 
 const login = async (req, res) => {
   const { email, password } = req.body;
+  const { SECRET_KEY } = process.env;
 
   const userExist = await User.findOne({ email: email });
 
@@ -26,8 +26,8 @@ const login = async (req, res) => {
   const payload = {
     id: userExist._id,
   };
-
-  const JWT_TOKEN = JWT.sign(payload, HASH_SECRET_KEY, {
+  console.log(payload, SECRET_KEY);
+  const JWT_TOKEN = JWT.sign(payload, SECRET_KEY, {
     expiresIn: "1h",
   });
 
