@@ -30,7 +30,7 @@ app.use("/api/colums", boardRouter);
 // app.use("/api/cards", cardsRouter);
 
 app.use((req, res) => {
-  res.status(400).json({ message: "Not Found" });
+  res.status(404).json({ message: "Not Found" });
 });
 
 app.use((err, req, res, next) => {

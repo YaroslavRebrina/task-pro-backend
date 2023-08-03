@@ -11,7 +11,7 @@ const userSchema = new Schema({
     type: String,
     required: [true, "Set password for user"],
   },
-  avatarURL: { type: String, required: [true, "Upload avatar"] },
+  avatarURL: { type: String },
   token: { type: String },
   theme: { type: String, enum: ["DARK", "LIGHT", "VIOLET"], default: "LIGHT" },
 });
