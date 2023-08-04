@@ -1,6 +1,12 @@
 const nodemailer = require("nodemailer");
+const { sendHelpRequestSchema } = require("../../shemas/email/validationSchemas");
+const { errorHandler } = require("../../helpers");
 
 const sendHelpRequest = async (req, res) => {
+  const { error } = sendHelpRequestSchema.validate(req.body);
+  if (error) {
+    return res.status(400).json({ error: errorHandler(400)});
+  }
   const { email, comment } = req.body;
 
   try {
@@ -16,7 +22,7 @@ const sendHelpRequest = async (req, res) => {
 
     const mailOptions = {
       from: "task-board@meta.ua",
-      to: "taskpro.project@gmail.com",
+      to: "addavikt@gmail.com",
       subject: "Help Request",
       text: `Email: ${email}\nComment: ${comment}`,
     };
